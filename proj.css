@@ -2,7 +2,7 @@ html{
     width: 100%;
     overflow-x: hidden;
 }
-#body{
+#top{
     background-image: url("https://wpamelia.com/wp-content/uploads/2019/02/4k-wallpaper-architecture-background-1308624.jpg");
     background-size: cover;
     height: 100vh;
@@ -11,7 +11,7 @@ html{
     background-color: transparent; 
     padding : 20px 20px 10px 0 ;
 }
-.right-head{
+.left-head{
     height: auto; 
     min-width : 150px; 
     width : auto; 
@@ -19,17 +19,17 @@ html{
     border-bottom-right-radius: 35px; 
     background-color: rgb(138, 188, 235); 
     padding-left: 30px; 
-    padding-right: 30px;
-    
+    padding-right: 30px;  
 }
-.right-head a:hover{
+.left-head a:hover{
     text-decoration: none;
 }
-.right-head a span{
-    line-height: 60px; font-size: 1.5em;
+.left-head a span{
+    line-height: 60px; 
+    font-size: 1.5em;
     color : white;
 }
-#navbarSupportedContent{
+.navbar-collapse{
     margin-left : 50px;
 }
 
@@ -78,18 +78,18 @@ html{
     font-size: 50px;
 }
 
-#content {
+#middle {
     margin-top: 25vh;
     position: absolute;
     height: auto;
     font-family: 'Roboto', sans-serif; 
 }
-#content a{
+#middle a{
     text-decoration : underline; 
     color: white; 
     font-size: 24px
 }
-#content p{
+#middle p{
     margin-top: 35px; 
     font-size:20px;
 }
@@ -111,14 +111,12 @@ html{
     font-weight: bold;
 }
 .features-content{
-    color : #777777; font-family: 'Roboto', sans-serif; font-size: 1.2rem; margin-bottom: 25px;
+    color : #777777; 
+    font-family: 'Roboto', sans-serif; 
+    font-size: 1.2rem; 
+    margin-bottom: 25px;
 }
-.social
-{
-    width: 2.5vw;
-    height: 2.5vw;
-    margin: 0 0.3%;
-}
+
 
 #contact{
     background-image: url('https://wpamelia.com/wp-content/uploads/2019/02/4k-wallpaper-architecture-background-1308624.jpg'); 
@@ -127,7 +125,54 @@ html{
     padding-bottom:8vh;
     font-size : 18px;
 }
+.goToAcc{
+    height : auto; 
+    padding: 30px 10px 20px 10px; 
+    border-radius : 20px; 
+    background-color: white; 
+    color : black
+}
+.goToAcc div{
+    text-align : center; 
+    margin-bottom: 30px
+}
+.goToAcc .signUp-btn{
+    width : 90%;
+    border-radius : 40px;
+    padding: 10px; 
+    background-color: rgb(92, 141, 224); 
+    color: white;
+    font-size: 1.1rem;
+}
+.goToAcc .signUp-btn:hover{
+    font-weight: bold;
+}
+.motto{
+    margin-top : 20px; 
+    color : grey; 
+    font-family: 'Roboto', sans-serif;
+}
 
+.contactDetail{
+    margin-top : 110px;
+    text-align: center;
+}
+.contactDetail a{
+text-decoration:none; color:white; 
+}
+
+.social
+{
+    width: 2.5vw;
+    height: 2.5vw;
+    margin: 0 0.3%;
+}
+.footer{
+    background-color : rgba(138, 188, 235);
+    padding-top: 20px;
+    color:white;
+    text-align: center;
+}
 
 
 input:focus,
@@ -142,12 +187,7 @@ button:focus {
     border: 0;
     cursor: pointer;
 }
-
-
-h1 {
-    font-size: 40px
-}
-              
+            
 .containerPadding {
     padding: 6vh 10vw 6vh 10vw;
     text-align: center;
