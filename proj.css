@@ -144,15 +144,19 @@ html{
     color: white;
     font-size: 1.1rem;
 }
-.goToAcc .signUp-btn:hover{
-    font-weight: bold;
-}
 .motto{
+    color:white;
     margin-top : 20px; 
     color : grey; 
     font-family: 'Roboto', sans-serif;
 }
-
+.shadow a{
+    color:white;
+}
+.shadow a:hover{
+    font-weight: bold;
+    text-decoration: none;
+}
 .contactDetail{
     margin-top : 110px;
     text-align: center;
@@ -194,7 +198,7 @@ button:focus {
 }
 
 
-/*@media (max-width : 1200px) {          
+/*@media (max-width : 1200px) {        
     li {
     padding-top: 10px;
     padding-bottom: 10px
@@ -218,3 +222,102 @@ button:focus {
         margin-top: 10vh;
 }
       */      
+#signUp-body{
+    color:white;
+    font-weight: bolder;
+    text-align: center;
+    padding:auto;
+    font-family: 'Rajdhani', sans-serif; 
+    padding-top:25vh;
+    background-image: url("https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-01.jpg");
+    background-size:cover;
+}
+#signUp-body h4{
+    margin:5vh;
+}
+.stu-inst{
+    background-color: rgb(255,255,255,0.4);
+    font-size: 1.5rem;
+    border-radius: 15px;
+    padding:2%;
+    width: 20vw;
+}
+.stu-inst a{
+    color: white;
+    text-decoration: none;
+}
+.stu-inst a:hover{
+    font-weight: 700;
+    color:white;
+    text-decoration: none;
+}
+
+/*------------------------------------------------------------*/
+
+#student-body{
+    background-image: url("https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-01.jpg");
+    background-size: cover;   
+    color:white;
+    margin:1vh;
+    font-size:1.2rem;
+    padding:5px;
+}
+
+#student-body h1{
+    margin:5vh auto;
+    text-align: center;
+}
+#student-body h2{
+    margin:5vh 0;
+}
+#student-body label{
+    font-weight: bolder;
+}
+#student-body table{
+    margin:5vh auto;
+
+}
+.ddl{
+    margin-right: 1vw;  
+}
+.ddl:hover{
+    font-weight: 600;
+}
+
+/*-----------------------*/
+#finalSignUp{
+    margin: 5vh;
+    padding:2vh 5vh;
+    width: 20vw;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    font-weight: 500;
+}
+#finalSignUp a{
+     color: black;
+}
+#finalSignUp a:hover{
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+#login-body{
+    background-image: url("https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-01.jpg");
+    background-size: cover;   
+    color:white;
+    font-size:1.2rem;
+    padding:20vh 20px;
+    text-align: center;
+}
+#login-body h1{
+    margin:5vh auto;
+}
+
+
+
+
+
+
+
+
