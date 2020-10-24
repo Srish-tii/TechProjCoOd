@@ -1,0 +1,326 @@
+html{
+    width: 100%;
+    overflow-x: hidden;
+}
+#top{
+    background-image: url("https://wpamelia.com/wp-content/uploads/2019/02/4k-wallpaper-architecture-background-1308624.jpg");
+    background-size: cover;
+    height: 100vh;
+}
+.navbar{
+    background-color: transparent; 
+    padding : 20px 20px 10px 0 ;
+}
+.left-head{
+    height: auto; 
+    min-width : 150px; 
+    width : auto; 
+    border-top-right-radius: 35px; 
+    border-bottom-right-radius: 35px; 
+    background-color: rgb(138, 188, 235); 
+    padding-left: 30px; 
+    padding-right: 30px;  
+}
+.left-head a:hover{
+    text-decoration: none;
+}
+.left-head a span{
+    line-height: 60px; 
+    font-size: 1.5em;
+    color : white;
+}
+.navbar-collapse{
+    margin-left : 50px;
+}
+
+.navbar-nav li{
+    padding-right: 15px; 
+    padding-left: 20px;
+}
+.navbar-nav li a{
+    color : white;
+}
+.navbar-nav li:hover{
+    font-weight: bold;
+}
+.signUp-btn {
+    padding: 10px 20px 10px 20px;
+    border-radius: 8px;
+    background-color: rgb(138, 188, 235);
+    color: white;
+    border-color: rgb(21, 123, 254);
+    font-size:0.85em;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.signUp-btn:hover {
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: all 0.4s ease;
+    transition-property: background-color, color, box-shadow;
+}
+
+.spl {
+    position: absolute;
+    left: 83vw
+}
+.spl2 {
+    position: absolute;
+    left: 68vw
+}
+.row-head{
+    padding: 5vh 5vw 5vh 15vw; 
+    color : white;
+    width: 110vw;
+}
+.row-head h1{
+    font-size: 50px;
+}
+
+#middle {
+    margin-top: 25vh;
+    position: absolute;
+    height: auto;
+    font-family: 'Roboto', sans-serif; 
+}
+#middle a{
+    text-decoration : underline; 
+    color: white; 
+    font-size: 24px
+}
+#middle p{
+    margin-top: 35px; 
+    font-size:20px;
+}
+#gif-container{
+    padding: 10vh 0 0 5vw;
+    opacity: 0.75;
+}
+#gif{
+    width: 305px;
+    border-radius: 10px;
+}
+#features img{
+    border-radius: 10px;
+    box-shadow: 0 0 6px 6px #e1e1e6;
+}
+.features-head{
+    font-size: 2.1em; 
+    font-family: 'Rajdhani', sans-serif; 
+    font-weight: bold;
+}
+.features-content{
+    color : #777777; 
+    font-family: 'Roboto', sans-serif; 
+    font-size: 1.2rem; 
+    margin-bottom: 25px;
+}
+
+
+#contact{
+    background-image: url('https://wpamelia.com/wp-content/uploads/2019/02/4k-wallpaper-architecture-background-1308624.jpg'); 
+    color: white;
+    padding-top: 15vh; 
+    padding-bottom:8vh;
+    font-size : 18px;
+}
+.goToAcc{
+    height : auto; 
+    padding: 30px 10px 20px 10px; 
+    border-radius : 20px; 
+    background-color: white; 
+    color : black
+}
+.goToAcc div{
+    text-align : center; 
+    margin-bottom: 30px
+}
+.goToAcc .signUp-btn{
+    width : 90%;
+    border-radius : 40px;
+    padding: 10px; 
+    background-color: rgb(92, 141, 224); 
+    color: white;
+    font-size: 1.1rem;
+}
+.motto{
+    color:white;
+    margin-top : 20px; 
+    color : grey; 
+    font-family: 'Roboto', sans-serif;
+}
+.shadow a{
+    color:white;
+}
+.shadow a:hover{
+    font-weight: bold;
+    text-decoration: none;
+}
+.contactDetail{
+    margin-top : 110px;
+    text-align: center;
+}
+.contactDetail a{
+text-decoration:none; color:white; 
+}
+
+.social
+{
+    width: 2.5vw;
+    height: 2.5vw;
+    margin: 0 0.3%;
+}
+.footer{
+    background-color : rgba(138, 188, 235);
+    padding-top: 20px;
+    color:white;
+    text-align: center;
+}
+.footer div p span:hover{
+    text-decoration: none;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+button,
+button:focus {
+    outline: none;
+    border: 0;
+    cursor: pointer;
+}
+            
+.containerPadding {
+    padding: 6vh 10vw 6vh 10vw;
+    text-align: center;
+}
+
+
+/*@media (max-width : 1200px) {        
+    li {
+    padding-top: 10px;
+    padding-bottom: 10px
+    }
+
+    h1 {
+        font-size: 30px
+    }
+
+    .containerPadding {
+        padding: 0 10vw 4vh 10vw;
+        text-align: center;
+    }
+
+    .textBox {
+        text-align: left;
+        padding: 4vh 8vw;
+    }
+
+    #features{
+        margin-top: 10vh;
+}
+      */      
+#signUp-body{
+    color:white;
+    font-weight: bolder;
+    text-align: center;
+    padding:auto;
+    font-family: 'Rajdhani', sans-serif; 
+    padding-top:25vh;
+    background-image: url("https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-01.jpg");
+    background-size:cover;
+}
+#signUp-body h4{
+    margin:5vh;
+}
+.stu-inst{
+    background-color: rgb(255,255,255,0.4);
+    font-size: 1.5rem;
+    border-radius: 15px;
+    padding:2%;
+    width: 20vw;
+}
+.stu-inst a{
+    color: white;
+    text-decoration: none;
+}
+.stu-inst a:hover{
+    font-weight: 700;
+    color:white;
+    text-decoration: none;
+}
+
+/*------------------------------------------------------------*/
+
+#student-body{
+    background-image: url("https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-01.jpg");
+    background-size: cover;   
+    color:white;
+    margin:1vh;
+    font-size:1.2rem;
+    padding:5px;
+}
+
+#student-body h1{
+    margin:5vh auto;
+    text-align: center;
+}
+#student-body h2{
+    margin:5vh 0;
+}
+#student-body label{
+    font-weight: bolder;
+}
+#student-body table{
+    margin:5vh auto;
+
+}
+.ddl{
+    margin-right: 1vw;  
+}
+.ddl:hover{
+    font-weight: 600;
+}
+
+/*-----------------------*/
+#finalSignUp{
+    margin: 5vh;
+    padding:2vh 5vh;
+    width: 20vw;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    font-weight: 500;
+}
+#finalSignUp a{
+     color: black;
+}
+#finalSignUp a:hover{
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
+
+#login-body{
+    background-image: url("https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-01.jpg");
+    background-size: cover;   
+    color:white;
+    font-size:1.2rem;
+    padding:20vh 20px;
+    text-align: center;
+}
+#login-body h1{
+    margin:5vh auto;
+}
+
+
+
+
+
+
+
+
