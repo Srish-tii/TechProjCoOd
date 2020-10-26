@@ -10,6 +10,7 @@
   "devDependencies": {},
   "scripts": {
     "start" : "node app.js",
+    "type": "module",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

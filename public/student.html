@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html>
 <head>
 	<title>Student Sign Up</title>
@@ -15,7 +15,7 @@
 			<div class="row">
 				<label class="col-xs-12 col-sm-4 col-sm-3"> Name* : </label> 
 				<input name="name" class="col-sm-6 col-lg-3 col-xs-8" type='text' placeholder=" Your full name "/>
-			</div><br><!-- 
+			</div><br>
 			<div class="row">
 				<label class="col-xs-12 col-sm-4 col-sm-3"> Date of Birth* : </label>
 				<input name="dob" class="col-sm-6 col-lg-3 col-xs-8" type='date'/> 
@@ -30,23 +30,23 @@
 			</div><br>
 			<div class="row">
 				<label class="col-xs-12 col-sm-4 col-sm-3"> Contact no.* : </label> 
-				<input name="c1" class="col-sm-6 col-lg-3 col-xs-8" type='number' placeholder=" Contact no. 1"/>
-				<input name="c2" class="col-sm-6 col-lg-3 col-xs-8" type='number' placeholder=" Contact no. 2 (optional)"/>
+				<input name="numberOne" class="col-sm-6 col-lg-3 col-xs-8" type='number' placeholder=" Contact no. 1"/>
+				<input name="numberTwo" class="col-sm-6 col-lg-3 col-xs-8" type='number' placeholder=" Contact no. 2 (optional)"/>
 			</div><br>
 			<div class="row">
 				<label class="col-xs-12 col-sm-4 col-sm-3"> Password* : </label>
-				<input name="pw" class="col-sm-6 col-lg-3 col-xs-8" 
+				<input name="password" class="col-sm-6 col-lg-3 col-xs-8" 
 				 type='Password' placeholder="Create a password" pattern=".{8,15}" title="Password must have minimum 8 characters.">
 			</div><br>
 			<div class="row">
 				<label class="col-xs-12 col-sm-4 col-sm-3"> Confirm password* : </label>
-				<input name="cpw" class="col-sm-6 col-lg-3 col-xs-8" placeholder="Confirm your password" type='Password'>
+				<input name="confirm_password" class="col-sm-6 col-lg-3 col-xs-8" placeholder="Confirm your password" type='Password'>
 			</div><br>
 		</div>
 		<h2>Educational data</h2>
 		<div>
 			<div class="row"><label class="col-xs-12 col-sm-4 col-sm-3"> Highest qualification (completed)* : </label> 
-				<select name="highestEdu" class="col-sm-6 col-lg-3 col-xs-8">
+				<select name="highest_qualification" class="col-sm-6 col-lg-3 col-xs-8">
 					<option>10th Pass</option>
 					<option>12th Pass</option>
 					<option>B.Tech</option>
@@ -55,7 +55,7 @@
 				</select>
 			</div><br>
 			<div class="row"><label class="col-xs-12 col-sm-4 col-sm-3"> Current education (pursuing)*  : </label> 
-				<select name="currentEdu" class="col-sm-6 col-lg-3 col-xs-8" >
+				<select name="current_edu" class="col-sm-6 col-lg-3 col-xs-8" >
 					<option>11th-12th</option>
 					<option>B.Tech</option>
 					<option>B.Sc</option>
@@ -71,100 +71,133 @@
 		<h5>Here are the domains for you to choose from : </h5>
 		<table border="1" cellpadding = "5" cellspacing = "5">
 			<tr>
-				<td>T0001</td>
+				<td>P0001</td>
 				<td>Machine Learning</td>
 			</tr>
 			<tr>
-				<td>T0002</td>
+				<td>P0002</td>
 				<td>Web Developement</td>
 			</tr>
 			<tr>
-				<td>T0003</td>
+				<td>P0003</td>
 				<td>App Developement</td>
 			</tr>
 			<tr>
-				<td>T0004</td>
+				<td>P0004</td>
 				<td>Design</td>
 			</tr>
 			<tr>
-				<td>T0005</td>
+				<td>P0005</td>
 				<td>Cyber Security</td>
 			</tr>
 			<tr>
-				<td>T0006</td>
+				<td>P0006</td>
 				<td>Electronics</td>
 			</tr>
 			<tr>
-				<td>T0007</td>
+				<td>P0007</td>
 				<td>DataBase Managament System</td>
 			</tr>
 			<tr>
-				<td>T0008</td>
+				<td>P0008</td>
 				<td>Artificial Intelligence</td>
 			</tr>
 			<tr>
-				<td>T0009</td>
+				<td>P0009</td>
 				<td>Image Processing</td>
 			</tr>
 			<tr>
-				<td>T0010</td>
+				<td>P0010</td>
 				<td>Others</td>
 			</tr>
 		</table>
 		<div class="row"><label class="col-xs-12 col-sm-4 col-sm-3"> Interested Domain* : </label>
 			<select name="project_id" class="col-sm-6 col-lg-3 col-xs-8">
+				<option>P0001</option>
+				<option>P0002</option>
+				<option>P0003</option>
+				<option>P0004</option>
+				<option>P0005</option>
+				<option>P0006</option>
+				<option>P0007</option>
+				<option>P0008</option>
+				<option>P0009</option>
+				<option>P0010</option>
+			</select>
+		</div><br>
+		<h5>Here are your options for team : </h5>
+		<table border="1" cellpadding = "5" cellspacing = "5">
+			<tr>
+				<td>T0001</td>
+				<td>Need three partners for project</td>
+			</tr>
+			<tr>
+				<td>T0002</td>
+				<td>Need two partners for project</td>
+			</tr>
+			<tr>
+				<td>T0003</td>
+				<td>Need one partner for project</td>
+			</tr>
+			<tr>
+				<td>T0007</td>
+				<td>Need guidance from instructor</td>
+			</tr>
+			
+		</table>
+		<div class="row" id="no-mems"><label class="col-xs-12 col-sm-4 col-sm-3"> Select team preference* : </label> 
+			<select name="team_id" class="col-sm-6 col-lg-3 col-xs-8">
 				<option>T0001</option>
 				<option>T0002</option>
 				<option>T0003</option>
-				<option>T0004</option>
-				<option>T0005</option>
-				<option>T0006</option>
 				<option>T0007</option>
-				<option>T0008</option>
-				<option>T0009</option>
-				<option>T0010</option>
-			</select>
-		</div><br>
-		<div class="row"><label class="col-xs-12 col-sm-4 col-sm-3"> Project preference for team* : </label> 
+			</select> 
+		</div>
+<!-- 		<div class="row"><label class="col-xs-12 col-sm-4 col-sm-3"> Project preference for team* : </label> 
 			<input type="button" class="ddl col-sm-6 col-lg-3 col-xs-8" onclick="func1()" value="Need partner(s) for project"> 
 			<input type="button" class="ddl col-sm-6 col-lg-3 col-xs-8" onclick="func2()" value="Need guidance from instructor"> 
 		</div><br>
 		<div class="row" id="no-mems" style="display: none "><label class="col-xs-12 col-sm-4 col-sm-3"> Select no. of team members* : </label> 
-			<select name="no_of_mem" class="col-sm-6 col-lg-3 col-xs-8">
+			<select name="no_of_member" class="col-sm-6 col-lg-3 col-xs-8">
 				<option>2</option>
 				<option>3</option>
 				<option>4</option>
 			</select> 
 		</div>
 		<div class="row" id="guidance" style="display: none "><label class="col-xs-12 col-sm-4 col-sm-3"> Select no. of team members* : </label> 
-			<select name="no_of_mem" class="col-sm-6 col-lg-3 col-xs-8">
+			<select name="no_of_member" class="col-sm-6 col-lg-3 col-xs-8">
 				<option>0</option> 
 			</select> 
 		</div> 
-		<h6>(no team members, only an instructor for guidance will be provided)</h6>
+		<h6>(no team members, only an instructor for guidance will be provided)</h6> -->
 		<br>
 		<h6>*Following choices require individual judgements. Please try to be as accurate as possible.</h6><br>
 		<div class="row">
 			<label class="col-xs-12 col-sm-4 col-sm-3"> Choose difficulty level* : </label> 
-			<select name="difficulty" class="col-sm-6 col-lg-3 col-xs-8">
+			<select name="difficulty_lvl" class="col-sm-6 col-lg-3 col-xs-8">
 				<option>Easy</option>
 				<option>Medium</option>
 				<option>Hard</option>
 			</select> 
 		</div><br>
 		<div class="row"><label class="col-xs-12 col-sm-4 col-sm-3"> Choose approximate time required to complete the project* : </label> 
-			<select name="time" class="col-sm-6 col-lg-3 col-xs-8">
+			<select name="proj_time" class="col-sm-6 col-lg-3 col-xs-8">
 				<option>1 month</option>
 				<option>2 months</option>
 				<option>4 months</option>
 				<option>6 months</option>
-				<option>more than 6 months</option>
+				<option>>6 months</option>
 			</select> 
 		</div>
- -->
+
 		<div style="text-align: center;">
-			<button id="finalSignUp" type="submit"><!-- <a href="done.html"> -->Finish Sign Up<!-- </a> --></button>
-		</div>
+		<button class="finalSignUp">
+			Finish (Mandatory to your store data)
+		</button>
+		<button class="finalSignUp">
+			<a href="done.html">Next Page (Click after Finish)</a>
+		</button>
+	</div>
 	</form>
 </body>
 <script type="text/javascript" src="student.js"></script>

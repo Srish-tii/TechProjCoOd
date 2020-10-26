@@ -7,24 +7,28 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
 </head>
 <body id="login-body">
+    <form method="POST" action="/login.html">
     <h1>Enter login details</h1>
+    <br>
     <div>                       
         <div class="row">
             <div class="col-xs-12 col-sm-2"></div>
-            <label class="col-xs-12 col-sm-4"> E-mail id : </label> 
-            <input class="col-sm-6 col-lg-3 col-xs-8" type='text' placeholder=" xyz@gmail.com ">
+            <label style="font-weight: bold; font-size: 1.5rem" class="col-xs-12 col-sm-4"> E-mail id : </label> 
+            <input id="email" class="col-sm-6 col-lg-3 col-xs-8" type='text' placeholder=" xyz@gmail.com " value="" name="username" onkeyup='saveValue(this);'>
         </div>
         <br>
         <div class="row">
             <div class="col-xs-12 col-sm-2"></div>
-            <label class="col-xs-12 col-sm-4 col-sm-3"> Password : </label>
-            <input class="col-sm-6 col-lg-3 col-xs-8" required type='Password' placeholder="Enter your password">
+            <label style="font-weight: bold; font-size: 1.5rem" class="col-xs-12 col-sm-4 col-sm-3"> Password : </label>
+            <input id="password" class="col-sm-6 col-lg-3 col-xs-8" required type='Password' placeholder="Enter your password" value="" name="password" onkeyup='saveValue(this);'>
         </div>
         <br>
     </div>
     <div>
-        <button id="finalSignUp"><a href="done.html">Log In</a></button>
+        <button onClick="getVal()" class="finalSignUp">Verify your identity (compulsory)</button>
+        <button type="submit" id="proceed" class="finalSignUp"><a href="loggedIn.html">Proceed (after verification)</a></button>
     </div>
+</form>
 </body>
-<script type="text/javascript" src="student.js"></script>
+<script type="text/javascript" type="module" src="student.js"></script>
 </html>

@@ -10,83 +10,138 @@
 <h1>Enter your details</h1>
 <h6>*required</h6>
 <h2>Personal data</h2>
-	<div>						
-		<div class="row"><label class="col-xs-12 col-sm-4 "> Name* : </label> <input class="col-sm-6 col-lg-3 col-xs-8" type='text' placeholder=" Your full name "/></div><br>
-		<div class="row"><label class="col-xs-12 col-sm-4 "> Date of Birth* : </label> <input class="col-sm-6 col-lg-3 col-xs-8" type='date'/> </div><br>
-		<div class="row"><label class="col-xs-12 col-sm-4 "> Resident City* : </label> <input class="col-sm-6 col-lg-3 col-xs-8" 0ype='text' placeholder=" In which city do you live? "/></div><br>
-		<div class="row"><label class="col-xs-12 col-sm-4 "> E-mail id* :  </label> <input class="col-sm-6 col-lg-3 col-xs-8" className="pi-stu" type='text' placeholder=" xyz@gmail.com "/></div><br>
-		<div class="row"><label class="col-xs-12 col-sm-4 "> Contact no.* : </label> <input class="col-sm-6 col-lg-3 col-xs-8" type='number' placeholder=" Contact no. 1"/><input class="col-sm-6 col-lg-3 col-xs-8" type='number' placeholder=" Contact no. 2 (optional)"/></div><br>
-		<div class="row"><label class="col-xs-12 col-sm-4 "> Password* : </label><input class="col-sm-6 col-lg-3 col-xs-8" required
-		 type='Password' placeholder="Create a password" pattern=".{8,15}" title="Password must have minimum 8 characters."></div><br>
-		<div class="row"><label class="col-xs-12 col-sm-4 ">Confirm password* : </label><input class="col-sm-6 col-lg-3 col-xs-8" required placeholder="Confirm your password" type='Password'></div><br>
-	</div>
+	<form action="/instructor.html" method='POST'>
+		<div>						
+			<div class="row">
+				<label class="col-xs-12 col-sm-4 col-sm-3"> Name* : </label> 
+				<input name="name" class="col-sm-6 col-lg-3 col-xs-8" type='text' placeholder=" Your full name "/>
+			</div><br>
+			<div class="row">
+				<label class="col-xs-12 col-sm-4 col-sm-3"> Date of Birth* : </label>
+				<input name="dob" class="col-sm-6 col-lg-3 col-xs-8" type='date'/> 
+			</div><br>
+			<div class="row">
+				<label class="col-xs-12 col-sm-4 col-sm-3"> Resident City* : </label> 
+				<input name="city" class="col-sm-6 col-lg-3 col-xs-8" type='text' placeholder=" In which city do you live? "/>
+			</div><br>
+			<div class="row">
+				<label class="col-xs-12 col-sm-4 col-sm-3"> E-mail id* :  </label> 
+				<input name="email" class="col-sm-6 col-lg-3 col-xs-8" className="pi-stu" type='text' placeholder=" xyz@gmail.com "/>
+			</div><br>
+			<div class="row">
+				<label class="col-xs-12 col-sm-4 col-sm-3"> Contact no.* : </label> 
+				<input name="numberOne" class="col-sm-6 col-lg-3 col-xs-8" type='number' placeholder=" Contact no. 1"/>
+				<input name="numberTwo" class="col-sm-6 col-lg-3 col-xs-8" type='number' placeholder=" Contact no. 2 (optional)"/>
+			</div><br>
+			<div class="row">
+				<label class="col-xs-12 col-sm-4 col-sm-3"> Password* : </label>
+				<input name="password" class="col-sm-6 col-lg-3 col-xs-8" 
+				 type='Password' placeholder="Create a password" pattern=".{8,15}" title="Password must have minimum 8 characters.">
+			</div><br>
+			<div class="row">
+				<label class="col-xs-12 col-sm-4 col-sm-3"> Confirm password* : </label>
+				<input name="confirm_password" class="col-sm-6 col-lg-3 col-xs-8" placeholder="Confirm your password" type='Password'>
+			</div><br>
+		</div>
 	<h2>Educational data</h2>
 	<div>
-		<div class="row"><label class="col-xs-12 col-sm-4"> Highest qualification (completed)* : </label> <input class="col-sm-6 col-lg-3 col-xs-8" type="text" placeholder="eg. phd"></div><br>
-		<div class="row"><label class="col-xs-12 col-sm-4"> Current profession* : </label> <input type='text' class="col-sm-6 col-lg-3 col-xs-8" placeholder="eg. professor" >
-			</div><br>
-		<div class="row"><label class="col-xs-12 col-sm-4"> Teaching experience (approx. years)* :</label><input type="number" class="col-sm-6 col-lg-3 col-xs-8">
-		</div><br>
+		<div class="row">
+			<label class="col-xs-12 col-sm-4"> Highest qualification (completed)* : </label> 
+			<input name="highest_qualification" class="col-sm-6 col-lg-3 col-xs-8" type="text" placeholder="eg. phd"></div><br>
+		<div class="row">
+			<label class="col-xs-12 col-sm-4"> Current profession* : </label> 
+			<input type='text' name="current_profession" class="col-sm-6 col-lg-3 col-xs-8" placeholder="eg. professor" ></div><br>
+		<div class="row">
+			<label class="col-xs-12 col-sm-4"> Teaching experience (approx. years)* :</label>
+			<input type="number" name="teaching_exp" class="col-sm-6 col-lg-3 col-xs-8"></div><br>
 	</div>
 	<h2>Project preferences</h2>
-	<h5>Here are the domains for you to choose from : </h5>
-	<table border="1" cellpadding = "5" cellspacing = "5">
-		<tr>
-			<td>T0001</td>
-			<td>Machine Learning</td>
-		</tr>
-		<tr>
-			<td>T0002</td>
-			<td>Web Developement</td>
-		</tr>
-		<tr>
-			<td>T0003</td>
-			<td>App Developement</td>
-		</tr>
-		<tr>
-			<td>T0004</td>
-			<td>Design</td>
-		</tr>
-		<tr>
-			<td>T0005</td>
-			<td>Cyber Security</td>
-		</tr>
-		<tr>
-			<td>T0006</td>
-			<td>Electronics</td>
-		</tr>
-		<tr>
-			<td>T0007</td>
-			<td>DataBase Managament System</td>
-		</tr>
-		<tr>
-			<td>T0008</td>
-			<td>Artificial Intelligence</td>
-		</tr>
-		<tr>
-			<td>T0009</td>
-			<td>Image Processing</td>
-		</tr>
-		<tr>
-			<td>T0010</td>
-			<td>Others</td>
-		</tr>
-	</table>
-	<div class="row"><label class="col-xs-12 col-sm-4 col-sm-3"> Interested Domain* : </label>
-		<select class="col-sm-6 col-lg-3 col-xs-8">
-			<option>T0001</option>
-			<option>T0002</option>
-			<option>T0003</option>
-			<option>T0004</option>
-			<option>T0005</option>
-			<option>T0006</option>
-			<option>T0007</option>
-			<option>T0008</option>
-			<option>T0009</option>
-			<option>T0010</option>
-		</select>
-	</div><br>
-	<div class="row"><label class="col-xs-12 col-sm-4 col-sm-3"> Project preference for team* : </label> 
+		<h5>Here are the domains for you to choose from : </h5>
+		<table border="1" cellpadding = "5" cellspacing = "5">
+			<tr>
+				<td>P0001</td>
+				<td>Machine Learning</td>
+			</tr>
+			<tr>
+				<td>P0002</td>
+				<td>Web Developement</td>
+			</tr>
+			<tr>
+				<td>P0003</td>
+				<td>App Developement</td>
+			</tr>
+			<tr>
+				<td>P0004</td>
+				<td>Design</td>
+			</tr>
+			<tr>
+				<td>P0005</td>
+				<td>Cyber Security</td>
+			</tr>
+			<tr>
+				<td>P0006</td>
+				<td>Electronics</td>
+			</tr>
+			<tr>
+				<td>P0007</td>
+				<td>DataBase Managament System</td>
+			</tr>
+			<tr>
+				<td>P0008</td>
+				<td>Artificial Intelligence</td>
+			</tr>
+			<tr>
+				<td>P0009</td>
+				<td>Image Processing</td>
+			</tr>
+			<tr>
+				<td>P0010</td>
+				<td>Others</td>
+			</tr>
+		</table>
+		<div class="row"><label class="col-xs-12 col-sm-4 col-sm-3"> Interested Domain* : </label>
+			<select name="project_id" class="col-sm-6 col-lg-3 col-xs-8">
+				<option>P0001</option>
+				<option>P0002</option>
+				<option>P0003</option>
+				<option>P0004</option>
+				<option>P0005</option>
+				<option>P0006</option>
+				<option>P0007</option>
+				<option>P0008</option>
+				<option>P0009</option>
+				<option>P0010</option>
+			</select>
+		</div><br>
+		<h5>Here are your options for team : </h5>
+		<table border="1" cellpadding = "5" cellspacing = "5">
+			<tr>
+				<td>T0001</td>
+				<td>Need three partners for project</td>
+			</tr>
+			<tr>
+				<td>T0002</td>
+				<td>Need two partners for project</td>
+			</tr>
+			<tr>
+				<td>T0003</td>
+				<td>Need one partner for project</td>
+			</tr>
+			<tr>
+				<td>T0007</td>
+				<td>Provide guidance to student</td>
+			</tr>
+			
+		</table>
+		<div class="row" id="no-mems"><label class="col-xs-12 col-sm-4 col-sm-3"> Select team preference* : </label> 
+			<select name="team_id" class="col-sm-6 col-lg-3 col-xs-8">
+				<option>T0004</option>
+				<option>T0005</option>
+				<option>T0006</option>
+				<option>T0007</option>
+			</select> 
+		</div><br>
+	<!-- <div class="row"><label class="col-xs-12 col-sm-4 col-sm-3"> Project preference for team* : </label> 
 		<input type="button" class="ddl col-sm-6 col-lg-3 col-xs-8" onclick="func1()" value="Need partner(s) for project"> 
 		<input type="button" class="ddl col-sm-6 col-lg-3 col-xs-8" onclick="func2()" value="Provide guidance as instructor"> 
 	</div><br>
@@ -98,19 +153,19 @@
 				<option>4</option>
 			</select> 
 		</div>
-		<br>
+		<br> -->
 		<h6>*Following choices require individual judgements. Please try to be as accurate as possible.</h6>
 		<br>
 		<div id="no-mems">
 			<div class="row"><label class="col-xs-12 col-sm-4"> Choose difficulty level* : </label> 
-			<select class="col-sm-6 col-lg-3 col-xs-8">
+			<select name="difficulty_lvl" class="col-sm-6 col-lg-3 col-xs-8">
 				<option>Easy</option>
 				<option>Medium</option>
 				<option>Hard</option>
 			</select> 
 			</div><br>
 			<div class="row"><label class="col-xs-12 col-sm-4"> Choose approximate time required to complete the project* : </label> 
-				<select class="col-sm-6 col-lg-3 col-xs-8">
+				<select name="proj_time" class="col-sm-6 col-lg-3 col-xs-8">
 					<option>1 month</option>
 					<option>2 months</option>
 					<option>4 months</option>
@@ -135,14 +190,17 @@
 				<option>2 months</option>
 				<option>4 months</option>
 				<option>6 months</option>
-				<option>more than 6 months</option>
+				<option>>6 months</option>
 			</select> 
 		</div>
 	</div>
 
 	<div style="text-align: center;">
-		<button id="finalSignUp">
-			<a href="done.html">Finish Sign Up</a>
+		<button class="finalSignUp">
+			Finish (Mandatory to your store data)
+		</button>
+		<button class="finalSignUp">
+			<a href="done.html">Next Page (Click after Finish)</a>
 		</button>
 	</div>
 
