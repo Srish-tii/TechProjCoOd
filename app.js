@@ -11,13 +11,16 @@ const {parse}=require('querystring');
 var lodash= require('lodash');
 const val= require('./public/student.js');
 var verified=false;
-const swal=require('sweetalert');
 var router = express.Router();
+var final='';
+var finalNames=[];
+var finalEmails=[];
 
 app.use(bodyparser.json);
 app.use(bodyparser.urlencoded({extended: true}));
 app.use(express.static('./public'))
 app.use(express.json());
+
 
 const db=mysql.createConnection({
 	host : 'localhost',
@@ -39,7 +42,8 @@ db.connect((err)=>{
 http.createServer((req,res)=>{
 
 	if(req.url === "/"){
-
+		finalNames=[];
+		finalNames=[];
 		fs.readFile('./public/proj.html',"UTF-8",(err,html)=>{
 			res.writeHead(200,{"Content-Type":"text/html"});
 			res.end(html);
@@ -47,14 +51,18 @@ http.createServer((req,res)=>{
 		});
 	}
 	else if(req.url === "/proj.html"){
+		finalNames=[];
+		finalNames=[];
+
 		fs.readFile('./public/proj.html',"UTF-8",(err,html)=>{
 			res.writeHead(200,{"Content-Type":"text/html"});
 			res.end(html);
-	
+			
 		});
 	}
 	
 	else if(req.url === "/signUp.html"){
+		
 			fs.readFile('./public/signUp.html',"UTF-8",(err,html)=>{
 				res.writeHead(200,{"Content-Type":"text/html"});
 				res.end(html);
@@ -62,12 +70,14 @@ http.createServer((req,res)=>{
 
 	}
 	else if(req.url === "/login.html"){
-
+		finalNames=[];
+		finalNames=[];
 			fs.readFile('./public/login.html',"UTF-8",(err,html)=>{
 				res.writeHead(200,{"Content-Type":"text/html"});
 				res.end(html);
 		});
 			if(req.method==='POST'){
+				final='';
 				var sql='DELETE FROM tempCheck';
 					 	db.query(sql,(err,info)=>{
 								if(err) throw err;
@@ -99,24 +109,329 @@ http.createServer((req,res)=>{
 									}
 									else{
 										verified=true;
-										
+										verify();	
 									}
 										
 					 			})	
 			
+					 		function verify(){
+					 			var sql=`select contact_id1 from email where email='${post.username}';`
+					 			db.query(sql,(err,result)=>{
+									if(err) throw err;
+									console.log(result[0].contact_id1);
+									if(result[0].contact_id1.substring(0,2)=='CI')
+										verifyInst(result[0].contact_id1);
+									if(result[0].contact_id1.substring(0,2)=='CS')
+										verifyStu(result[0].contact_id1);
+					 			})
+					 		}
+					 		function verifyInst(value){
+					 			var sql=`select inst_id from inst_personal_info where contact_id1='${value}';`
+					 			db.query(sql,(err,result)=>{
+									if(err) throw err;
+									console.log(result[0].inst_id);
+									verifytwoinst(result[0].inst_id);
+					 			})
+					 		}
+					 		function verifyStu(value){
+					 			var sql=`select stu_id from stu_personal_info where contact_id1='${value}';`
+					 			db.query(sql,(err,result)=>{
+									if(err) throw err;
+									console.log(result[0].stu_id);
+									verifytwostu(result[0].stu_id);
+					 			})
+					 		}
+					 		function verifytwoinst(value){
+					 			var sql=`select final_id from inst_project_pref where inst_id='${value}';`
+					 			db.query(sql,(err,result)=>{
+									if(err) throw err;
+									console.log(result[0].final_id);
+									final=result[0].final_id;
+									if(final!=null){
+										if(final.charAt(1)=='2'){
+											verifyinstinst(final);
+										}
+										if(final.charAt(1)=='3'){
+											verifystuinst(final);
+										}
+									}
+					 			})
+					 		}
+					 		function verifytwostu(value){
+					 			var sql=`select final_id from stu_project_pref where stu_id='${value}';`
+					 			db.query(sql,(err,result)=>{
+									if(err) throw err;
+									console.log(result[0].final_id);
+									final=result[0].final_id;
+									if(final!=null){
+										if(final.charAt(1)=='1'){
+											verifystustu(final);
+										}
+										if(final.charAt(1)=='3'){
+											verifystuinst(final);
+										}
+									}
+					 			})
+					 		}
+					 		function verifystustu(value){
+					 			var sql=`select stu_id from stu_stu_team where final_id2='${value}';`
+					 			db.query(sql,(err,result)=>{
+									if(err) throw err;
+									console.log(result);
+									for(var i=0;i<result.length;i++){
+										verifyfourss(result[i].stu_id);
+									}
+					 			})
+					 		}
+					 		function verifystuinst(value){
+					 			var sql=`select stu_id,inst_id from stu_inst_team where final_id1='${value}';`
+					 			db.query(sql,(err,result)=>{
+									if(err) throw err;
+									verifyfours(result[0].stu_id);
+									verifyfouri(result[0].inst_id);
+					 			})
+					 		}
+					 		function verifyinstinst(value){
+					 			var sql=`select inst_id from inst_inst_team where final_id3='${value}';`
+					 			db.query(sql,(err,result)=>{
+									if(err) throw err;
+									console.log(result);
+									for(var i=0;i<result.length;i++){
+										verifyfourii(result[i].inst_id);
+									}
+					 			})
+					 		}
+					 		var i=0;
+					 		var j=0;
+					 		var k=0;
+					 		function verifyfourss(value){
+					 			var sql=`select stu_personal_info.name, email.email from stu_personal_info, email where stu_personal_info.stu_id='${value}' and email.contact_id1=stu_personal_info.contact_id1;`
+					 			db.query(sql,(err,result)=>{
+					 				if(err) throw err;
+										finalNames[j]=result[0].name;
+										finalEmails[j]=result[0].email;
+										j=j+1;
+									
+					 			})
+					 		}
+					 		function verifyfours(value){
+					 			
+					 			var sql=`select stu_personal_info.name, email.email from stu_personal_info, email where stu_personal_info.stu_id='${value}' and email.contact_id1=stu_personal_info.contact_id1;`
+					 			db.query(sql,(err,result)=>{
+					 				if(err) throw err;
+										finalNames[0]=result[0].name;
+										finalEmails[0]=result[0].email;
+										
+									
+					 			})
+					 			console.log(finalNames[0]);
+					 		}
+					 		function verifyfouri(value){
+					 			console.log(finalNames[0]);
+					 			var sql=`select inst_personal_info.name, email.email from inst_personal_info, email where inst_personal_info.inst_id='${value}' and email.contact_id1=inst_personal_info.contact_id1;`
+					 			db.query(sql,(err,result)=>{
+					 				if(err) throw err;
+										finalNames[1]=result[0].name;
+										finalEmails[1]=result[0].email;									
+					 			})
+					 		}
+					 		
+					 		
+					 		function verifyfourii(value){
+					 			var sql=`select inst_personal_info.name, email.email from inst_personal_info, email where inst_personal_info.inst_id='${value}' and email.contact_id1=inst_personal_info.contact_id1;`
+					 			db.query(sql,(err,result)=>{
+					 				if(err) throw err;
+					 				finalNames[i]=result[0].name;
+					 				finalEmails[i]=result[0].email;
+					 				i=i+1;
+
+					 			})
+					 		}
+
+
 
 						})
-
 
 		}
 	}
 	else if(req.url === "/loggedIn.html"){
 			if(verified===true){
-				console.log("verified");
-				fs.readFile('./public/loggedIn.html',"UTF-8",(err,html)=>{
-				res.writeHead(200,{"Content-Type":"text/html"});
-				res.end(html);
-		});
+
+				if(final===null){
+					res.writeHead(200,{"Content-Type":"text/html"});
+					res.write('<!DOCTYPE html>'+
+					'<html>'+
+					'<head>'+
+					    '<link rel="stylesheet" type="text/css" href="proj.css">'+
+					   	'<title>Logged In</title>'+
+					'</head>'+
+					'<body id="signUp-body">'+
+						'<h2>Perfect match for your project has not been found yet, please come back after some time!!</h2>'+
+						'<button class="stu-inst" style="margin-top: 20px"><a href="proj.html">Logout'+'</a>'+'</button>'+
+					'</body>'+
+					'</html>');
+					res.end();
+										
+				}
+				else{
+					res.writeHead(200,{"Content-Type":"text/html"});
+					console.log(finalNames.length);
+
+					if(finalNames.length==2){
+					res.write('<!DOCTYPE html>'+'<html>'+
+						'<head>'+
+					    '<link rel="stylesheet" type="text/css" href="proj.css">'+
+					   	'<title>Logged In</title>'+
+						'</head>'+
+				        '    <body id="bg-only" style="text-align:center; margin-top:10vh">'+      
+				              '<h1>Welcome, your team is ready!</h1>'+
+				              '<h2>Meet your team</h2>'+ 
+				              '<table border="1" cellpadding = "5" cellspacing = "5" style="margin:auto">'+
+				              		'<tr>'+
+				              				'<td>Name : </td>'+
+				              				'<td>'+
+				              					finalNames[0]
+				              				+'</td>'+
+				              		'</tr>'+
+				              		'<tr>'+
+				              				'<td>Email : </td>'+
+				              				'<td>'+
+				              					finalEmails[0]
+				              				+'</td>'+
+				              		'</tr>'+
+				              		'<tr>'+
+				              				'<td>Name : </td>'+
+				              				'<td>'+
+				              					finalNames[1]
+				              				+'</td>'+
+				              		'</tr>'+
+				              		'<tr>'+
+				              				'<td>Email : </td>'+
+				              				'<td>'+
+				              					finalEmails[1]
+				              				+'</td>'+
+				              		'</tr>'+
+				          
+				              '</table>'+'<button class="stu-inst" style="margin-top: 20px"><a href="proj.html">Logout'+'</a>'+'</button>'+
+				        '</body>'+            
+				        '</html>');
+				}
+				if(finalNames.length==3){
+					res.write('<!DOCTYPE html>'+'<html>'+
+						'<head>'+
+					    '<link rel="stylesheet" type="text/css" href="proj.css">'+
+					   	'<title>Logged In</title>'+
+						'</head>'+
+				        '    <body id="bg-only" style="text-align:center; margin-top:10vh;">'+      
+				              '<h1 style="margin=-15px">Welcome, your team is ready!</h1>'+
+				              '<h2>Meet your team</h2>'+ 
+				              '<table border="1" cellpadding = "5" cellspacing = "5" style="margin:auto">'+
+				              		'<tr>'+
+				              				'<td>Name : </td>'+
+				              				'<td>'+
+				              					finalNames[0]
+				              				+'</td>'+
+				              		'</tr>'+
+				              		'<tr>'+
+				              				'<td>Email : </td>'+
+				              				'<td>'+
+				              					finalEmails[0]
+				              				+'</td>'+
+				              		'</tr>'+
+				              		'<tr>'+
+				              				'<td>Name : </td>'+
+				              				'<td>'+
+				              					finalNames[1]
+				              				+'</td>'+
+				              		'</tr>'+
+				              		'<tr>'+
+				              				'<td>Email : </td>'+
+				              				'<td>'+
+				              					finalEmails[1]
+				              				+'</td>'+
+				              		'</tr>'+
+				              		'<tr>'+
+				              				'<td>Name : </td>'+
+				              				'<td>'+
+				              					finalNames[2]
+				              				+'</td>'+
+				              		'</tr>'+
+				              		'<tr>'+
+				              				'<td>Email : </td>'+
+				              				'<td>'+
+				              					finalEmails[2]
+				              				+'</td>'+
+				              		'</tr>'+
+				              		
+				              '</table>'+'<button class="stu-inst" style="margin-top: 20px"><a href="proj.html">Logout'+'</a>'+'</button>'+
+				        '</body>'+            
+				        '</html>');
+				}
+				if(finalNames.length==4){
+					res.write('<!DOCTYPE html>'+'<html>'+
+						'<head>'+
+					    '<link rel="stylesheet" type="text/css" href="proj.css">'+
+					   	'<title>Logged In</title>'+
+						'</head>'+
+				        '    <body id="bg-only" style="text-align:center;margin-top:10vh">'+      
+				              '<h1>Welcome, your team is ready!</h1>'+
+				              '<h2>Meet your team</h2>'+ 
+				              '<table border="1" cellpadding = "5" cellspacing = "5" style="margin:auto">'+
+				              		'<tr>'+
+				              				'<td>Name : </td>'+
+				              				'<td>'+
+				              					finalNames[0]
+				              				+'</td>'+
+				              		'</tr>'+
+				              		'<tr>'+
+				              				'<td>Email : </td>'+
+				              				'<td>'+
+				              					finalEmails[0]
+				              				+'</td>'+
+				              		'</tr>'+
+				              		'<tr>'+
+				              				'<td>Name : </td>'+
+				              				'<td>'+
+				              					finalNames[1]
+				              				+'</td>'+
+				              		'</tr>'+
+				              		'<tr>'+
+				              				'<td>Email : </td>'+
+				              				'<td>'+
+				              					finalEmails[1]
+				              				+'</td>'+
+				              		'</tr>'+
+				              		'<tr>'+
+				              				'<td>Name : </td>'+
+				              				'<td>'+
+				              					finalNames[2]
+				              				+'</td>'+
+				              		'</tr>'+
+				              		'<tr>'+
+				              				'<td>Email : </td>'+
+				              				'<td>'+
+				              					finalEmails[2]
+				              				+'</td>'+
+				              		'</tr>'+
+				              		'<tr>'+
+				              				'<td>Name : </td>'+
+				              				'<td>'+
+				              					finalNames[3]
+				              				+'</td>'+
+				              		'</tr>'+
+				              		'<tr>'+
+				              				'<td>Email : </td>'+
+				              				'<td>'+
+				              					finalEmails[3]
+				              				+'</td>'+
+				              		'</tr>'+
+				              '</table>'+'<button class="stu-inst" style="margin-top: 20px"><a href="proj.html">Logout'+'</a>'+'</button>'+
+				        '</body>'+            
+				        '</html>');
+				}
+					res.end();
+			}
+				
 	}
 			
 
@@ -335,3 +650,29 @@ http.createServer((req,res)=>{
 		// 	console.log(err);
 		// })
 		// var sql = "INSERT INTO employees (id, name, age, city) VALUES ('1', 'Ajeet Kumar', '27', 'Allahabad')";  
+
+
+
+
+
+// 	app.get('/',function(req,res){
+//     connection.query('select * from student;', function(error,rows,fields,data)
+//     {
+//          if (!!error)
+//   {
+//       console.log('Error in the query');
+//   }
+//   else
+//   {
+//       console.log('successful');
+//       //console.log(rows[1].name);
+//       //res.send(rows[1].name);
+//       var t=rows;
+//       console.log(t);
+//       res.render('display.ejs',{ t });
+//   }
+// });
+
+
+
+    

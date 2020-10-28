@@ -225,6 +225,15 @@ button:focus {
         margin-top: 10vh;
 }
       */      
+#bg-only{
+    background-image: url("https://visme.co/blog/wp-content/uploads/2017/07/50-Beautiful-and-Minimalist-Presentation-Backgrounds-01.jpg");
+    background-size:cover;
+    color:white;
+    font-weight: bolder;
+    text-align: center;
+    padding:auto;
+    font-family: 'Rajdhani', sans-serif;
+}
 #signUp-body{
     color:white;
     font-weight: bolder;
