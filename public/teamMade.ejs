@@ -1,0 +1,65 @@
+<!-- res.writeHead(200,{"Content-Type":"text/html"});
+					res.write('<!DOCTYPE html>'+'<html>'+
+						'<head>'+
+					    '<link rel="stylesheet" type="text/css" href="proj.css">'+
+					    
+					   	'<title>Logged In</title>'+
+						'</head>'+
+				        '    <body id="bg-only" style="text-align:center; margin-top:15vh">'+      
+				        '<button class="update"><a href="update.html">Update your account details'+'</a>'+'</button>'+
+				            '<h1>Welcome, your team is ready !</h1>'+
+				            '<h2>Final ID(s) of your team(s) : </h2>'+ 
+				            '<table border="1" cellpadding = "5" cellspacing = "5" style="margin:auto">'+
+				              '<p style="font-size: 1.2rem">'+finalID+'</p>'+
+				            '</table>'+
+				            '<h3>Enter the final ID for which you would like to view the details : </h3>'+
+				            '<form method="post" action="loggedIn.html">'+
+					        '<input placeholder="Enter the final ID here" id="final_id" style="text-align:center;padding:5px; font-size:1.2rem"/>'+'<br>'+
+					        '<button class="finalSignUp" type="button" id="submitFinal"> Post this final ID </button>'+
+				            
+				            '<button class="finalSignUp" style="margin-top: 20px"><a href="proj.html">Logout'+'</a>'+'</button>'+
+				       		'</form>'+
+				            '<script type="text/javascript">document.getElementById("submitFinal").addEventListener("click",func);'+ 
+							'function func(){'+'temp='+'document.getElementById("final_id").value; alert(temp);}</script>'+
+				        '</body>'+ 
+         
+				        '</html>'); 
+
+
+
+
+<button class="finalSignUp" id="submitFinal"><a href="details.html">Proceed to details</a></button>
+				        -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="proj.css">
+					   
+<title>Logged In</title>
+</head>
+<body id="bg-only" style="text-align:center; margin-top:15vh">      
+
+<button class="update"><a href="update.html">Update your account details</a></button>
+
+<h1>Welcome, your team is ready !</h1>
+<h2>Final ID(s) of your team(s) : </h2>
+<table border="1" cellpadding = "5" cellspacing = "5" style="margin:auto">
+<p style="font-size: 1.2rem"><%= JSON.stringify(finalID) %></p>
+
+</table>
+<h3>Enter the final ID for which you would like to view the details : </h3>
+<form method="post" action="/loggedIn.html">
+
+<input placeholder="Enter the final ID here" id="final_id" name="tempFinal" style="text-align:center;padding:5px; font-size:1.2rem"/><br>
+<button class="finalSignUp"><a href="addProject.html">Add a project</a></button>
+<button class="finalSignUp">Post this final ID </button>
+
+
+<button class="finalSignUp" style="margin-top: 20px"><a href="proj.html">Logout</a></button>
+</form>
+
+
+</body>
+</html>
+

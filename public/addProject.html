@@ -1,0 +1,131 @@
+	<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Sign Up</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="proj.css"></li>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+</head>
+<body id="student-body">
+	<h1>Add a project</h1>
+	<h6>*required</h6>
+	<form action="/addProject.html" method='POST'>
+		<h2>Project preferences</h2>
+		<h5>Here are the domains for you to choose from : </h5>
+		<table border="1" cellpadding = "5" cellspacing = "5">
+			<tr>
+				<td>P0001</td>
+				<td>Machine Learning</td>
+			</tr>
+			<tr>
+				<td>P0002</td>
+				<td>Web Developement</td>
+			</tr>
+			<tr>
+				<td>P0003</td>
+				<td>App Developement</td>
+			</tr>
+			<tr>
+				<td>P0004</td>
+				<td>Design</td>
+			</tr>
+			<tr>
+				<td>P0005</td>
+				<td>Cyber Security</td>
+			</tr>
+			<tr>
+				<td>P0006</td>
+				<td>Electronics</td>
+			</tr>
+			<tr>
+				<td>P0007</td>
+				<td>DataBase Managament System</td>
+			</tr>
+			<tr>
+				<td>P0008</td>
+				<td>Artificial Intelligence</td>
+			</tr>
+			<tr>
+				<td>P0009</td>
+				<td>Image Processing</td>
+			</tr>
+			<tr>
+				<td>P0010</td>
+				<td>Others</td>
+			</tr>
+		</table>
+		<div class="row"><label class="col-xs-12 col-sm-4 col-sm-3"> Interested Domain* : </label>
+			<select name="project_id" class="col-sm-6 col-lg-3 col-xs-8">
+				<option>P0001</option>
+				<option>P0002</option>
+				<option>P0003</option>
+				<option>P0004</option>
+				<option>P0005</option>
+				<option>P0006</option>
+				<option>P0007</option>
+				<option>P0008</option>
+				<option>P0009</option>
+				<option>P0010</option>
+			</select>
+		</div><br>
+		<h5>Here are your options for team : </h5>
+		<table border="1" cellpadding = "5" cellspacing = "5">
+			<tr>
+				<td>T0001</td>
+				<td>Need three partners for project</td>
+			</tr>
+			<tr>
+				<td>T0002</td>
+				<td>Need two partners for project</td>
+			</tr>
+			<tr>
+				<td>T0003</td>
+				<td>Need one partner for project</td>
+			</tr>
+			<tr>
+				<td>T0007</td>
+				<td>Need guidance from instructor</td>
+			</tr>
+			
+		</table>
+		<div class="row" id="no-mems"><label class="col-xs-12 col-sm-4 col-sm-3"> Select team preference* : </label> 
+			<select name="team_id" class="col-sm-6 col-lg-3 col-xs-8">
+				<option>T0001</option>
+				<option>T0002</option>
+				<option>T0003</option>
+				<option>T0007</option>
+			</select> 
+		</div>
+
+		<br>
+		<h6>*Following choices require individual judgements. Please try to be as accurate as possible.</h6><br>
+		<div class="row">
+			<label class="col-xs-12 col-sm-4 col-sm-3"> Choose difficulty level* : </label> 
+			<select name="difficulty_lvl" class="col-sm-6 col-lg-3 col-xs-8">
+				<option>Easy</option>
+				<option>Medium</option>
+				<option>Hard</option>
+			</select> 
+		</div><br>
+		<div class="row"><label class="col-xs-12 col-sm-4 col-sm-3"> Choose approximate time required to complete the project* : </label> 
+			<select name="proj_time" class="col-sm-6 col-lg-3 col-xs-8">
+				<option>1 month</option>
+				<option>2 months</option>
+				<option>4 months</option>
+				<option>6 months</option>
+				<option>>6 months</option>
+			</select> 
+		</div>
+
+		<div style="text-align: center;">
+		<button class="finalSignUp">
+			Finish (Mandatory to your store data)
+		</button>
+		<button class="finalSignUp">
+			<a href="done.html">Next Page (Click after Finish)</a>
+		</button>
+	</div>
+	</form>
+</body>
+<script type="text/javascript" src="student.js"></script>
+</html>

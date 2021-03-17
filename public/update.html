@@ -1,0 +1,53 @@
+	<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Sign Up</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="proj.css"></li>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+</head>
+<body id="student-body">
+	<h1>Update your details</h1>
+	<form action="/update.html" method='POST'>
+		
+		<h5>Update any input you would like to change and leave the remaining input boxes empty :</h5>
+
+		</div><br>
+
+		<div class="row" id="1" style="display: block "><label class="col-xs-12 col-sm-4 col-sm-3"> Enter new resident city : </label> 
+		<input name="city" class="col-sm-6 col-lg-3 col-xs-8" type='text' placeholder=" In which city do you live? "/>
+		</div>
+
+		<div class="row" id="2" style="display: block "><label class="col-xs-12 col-sm-4 col-sm-3"> Enter new contact number : </label> 
+		<input name="numberOne" class="col-sm-6 col-lg-3 col-xs-8" type='number' placeholder=" Contact no. 1"/>
+				<input name="numberTwo" class="col-sm-6 col-lg-3 col-xs-8" type='number' placeholder=" Contact no. 2 (optional)"/>
+		</div>
+
+		<div class="row" id="3" style="display: block "><label class="col-xs-12 col-sm-4 col-sm-3"> Enter new password : </label> 
+		<input name="password" class="col-sm-6 col-lg-3 col-xs-8" 
+				 type='Password' placeholder=" Create a password" pattern=".{8,15}" title="Password must have minimum 8 characters."><br>
+		</div>
+		<div class="row" id="4" style="display: block ">
+		<label class="col-xs-12 col-sm-4 col-sm-3"> Enter highest qualification : </label> 
+		<input name="highest_qualification" class="col-sm-6 col-lg-3 col-xs-8" type='text' placeholder=" eg. phd "/>
+		</div>
+		
+		<div class="row" id="5" style="display: block ">
+		<label class="col-xs-12 col-sm-4 col-sm-3"> Enter current education/profession : </label> 
+		<input name="current_profession" class="col-sm-6 col-lg-3 col-xs-8" type='text' placeholder=" eg. professor "/>
+		</div>
+		<div class="row">
+		<label class="col-xs-12 col-sm-4 col-sm-3"> Teaching experience : </label>
+		<input type="number" name="teaching_exp" class="col-sm-6 col-lg-3 col-xs-8" placeholder=" (approx. years)"></div><br>
+		</div>
+		<div style="text-align: center;">
+		<button class="finalSignUp">
+			Save changes
+		</button>
+		<button class="finalSignUp">
+			<a href="updated.html">Proceed</a>
+		</button>
+	</div>
+	</form>
+</body>
+</html>
