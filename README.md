@@ -8,9 +8,9 @@ Technical project co-ordinator : Take a step towards achieving your ideal tech s
 
 ## Screenshots:
 
-<p><img src="https://github.com/Srish-tii/TechProjCoOd/blob/master/assets/ss1.PNG"></p>
-<p><img src="https://github.com/Srish-tii/TechProjCoOd/blob/master/assets/ss2.PNG"></p>
-<p><img src="https://github.com/Srish-tii/TechProjCoOd/blob/master/assets/ss3.PNG"></p>
-<p><img src="https://github.com/Srish-tii/TechProjCoOd/blob/master/assets/ss4.PNG"></p>
-<p><img src="https://github.com/Srish-tii/TechProjCoOd/blob/master/assets/ss5.PNG"></p>
-<p><img src="https://github.com/Srish-tii/TechProjCoOd/blob/master/assets/ss6.PNG"></p>
+<p><img src="https://github.com/Srish-tii/TechProjCoOd/blob/master/assets/ss1.PNG" width="600"></p>
+<p><img src="https://github.com/Srish-tii/TechProjCoOd/blob/master/assets/ss2.PNG" width="600"></p>
+<p><img src="https://github.com/Srish-tii/TechProjCoOd/blob/master/assets/ss3.PNG" width="600"></p>
+<p><img src="https://github.com/Srish-tii/TechProjCoOd/blob/master/assets/ss4.PNG" width="600"></p>
+<p><img src="https://github.com/Srish-tii/TechProjCoOd/blob/master/assets/ss5.PNG" width="600"></p>
+<p><img src="https://github.com/Srish-tii/TechProjCoOd/blob/master/assets/ss6.PNG" width="600"></p>
